@@ -5,7 +5,7 @@ PSQL="psql --username=freecodecamp --dbname=periodic_table -t -c"
 if [[ -z $1 ]]
 then
   echo Please provide an element as an argument.
-  exit 1
+  exit 0
 else 
 
     # Check if the input is a positive integer for atomic number
@@ -19,7 +19,7 @@ else
       if [[ -z $ATOM_RESULT ]] 
       then 
         echo I could not find that element in the database.
-        exit 1
+        exit 0
       else 
       echo "$ATOM_RESULT" | while read NAME bar SYMBOL bar TYPE bar MASS bar MELTING bar BOILING
       do 
@@ -37,7 +37,7 @@ else
       if [[ -z $ATOM_RESULT ]] 
       then 
         echo I could not find that element in the database.
-        exit 1
+        exit 0
       else 
       echo "$ATOM_RESULT" | while read NAME bar ATOMIC_NUMBER bar TYPE bar MASS bar MELTING bar BOILING
       do 
@@ -55,7 +55,7 @@ else
       if [[ -z $ATOM_RESULT ]] 
       then 
         echo I could not find that element in the database.
-        exit 1
+        exit 0
       else 
       echo "$ATOM_RESULT" | while read SYMBOL bar ATOMIC_NUMBER bar TYPE bar MASS bar MELTING bar BOILING
       do 
